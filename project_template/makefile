@@ -21,8 +21,6 @@ VERBOSE = --verbose
 
 SHOW_CC_SEARCHPATH = --print-search-dirs
 
-PASS_MACROS = -dD
-
 INCLUDES = -I ./inc ./
 
 LINKFLAGS= -L ./src
@@ -59,7 +57,7 @@ clean :
 	rm -f *.cdb *.lk *.lst *.map *.rel *.rst *.sym *.asm
 
 all : $(OBJS)
-	$(CC) $(CFLAGS) $(VERBOSE) $(SHOW_CC_SEARCHPATH) $(INCLUDES) $(PASS_MACROS) $(LINKFLAGS) main.c $(OBJS)
+	$(CC) $(CFLAGS) $(VERBOSE) $(SHOW_CC_SEARCHPATH) $(INCLUDES) $(LINKFLAGS) main.c $(OBJS)
 
 stm8l15x_adc.rel : stm8l15x_adc.c stm8l15x_adc.h
 	$(CC) $(CFLAGS) $(VERBOSE) $(INCLUDES) -c $<
